@@ -6,27 +6,9 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>rotate-scale-transform</title>
-    <style>
-        #title {
-            font-size: 5.5vw;
-            font-family: 'Arial Narrow', Arial, sans-serif;
-        }
-
-        #info {
-            font-size: 2.5vh;
-        }
-
-        #links {
-            font-size: 2vw;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        #main {
-            font-size: 1.25vw;
-            overflow: auto;
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="scroll.css" />
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
@@ -78,6 +60,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>rotate-scale-scroll</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="scroll.css" />
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
@@ -101,20 +85,7 @@
         <div></div>
     </main>
     
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>
-        $(function () {
-            $(window).scroll(function () {
-                var y = $(this).scrollTop();
-                $("#title b").css('transform', 'rotateY(' + y + 'deg)');
-
-                var plus = y * 0.0005 + 1;
-                $("#links").css('transform', 'rotateX(' + y + 'deg) scale(' + plus + ')');
-                let minus = y * -0.0005 + 1;
-                $("#info").css('transform', 'rotateZ(' + y + 'deg) scale(' + minus + ')');
-            });
-        });
-    </script>
+    <script src="scroll.js"></script>
 </body>
 
 </html>
@@ -122,21 +93,7 @@
     ]]></math></code></pre>
         </div>
     </main>
-
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>
-        $(function () {
-            $(window).scroll(function () {
-                var y = $(this).scrollTop();
-                $("#title b").css('transform', 'rotateY(' + y + 'deg)');
-
-                var plus = y * 0.0005 + 1;
-                $("#links").css('transform', 'rotateX(' + y + 'deg) scale(' + plus + ')');
-                let minus = y * -0.0005 + 1;
-                $("#info").css('transform', 'rotateZ(' + y + 'deg) scale(' + minus + ')');
-            });
-        });
-    </script>
+    <script src="scroll.js"></script>
 </body>
 
 </html>
