@@ -1,0 +1,82 @@
+html {
+    height: -webkit-fill-available;
+}
+
+body,
+.mousedragscrollable,
+.mousedragscrollable li {
+    margin: 0;
+    padding: 0;
+}
+
+.mousedragscrollable {
+    box-sizing: border-box;
+    list-style: none;
+    white-space: nowrap;
+    overflow: auto;
+    height: 100vh;
+    max-height: -webkit-fill-available;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mousedragscrollable>* {
+    display: inline-block;
+    overflow: auto;
+}
+
+.mousedragscrollable li {
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 750px;
+    max-width: 90vw;
+    height: 99%;
+    position: relative;
+    white-space: normal;
+}
+
+.mousedragscrollable .content,
+.mousedragscrollable .link a {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.mousedragscrollable .content {
+    margin: 0;
+    padding: 2.5%;
+}
+
+.mousedragscrollable .link a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.mousedragscrollable h1,
+.mousedragscrollable .link a {
+    font-size: 2.5rem;
+}
+
+body::-webkit-scrollbar,
+.mousedragscrollable::-webkit-scrollbar,
+.mousedragscrollable li::-webkit-scrollbar {
+    width: 4vh;
+    height: 4vh;
+    background: #fff;
+}
+
+@media screen and (max-width: 750px) {
+
+    .mousedragscrollable h1,
+    .mousedragscrollable .link a {
+        font-size: 7.5vw;
+    }
+}

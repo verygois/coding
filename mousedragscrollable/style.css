@@ -1,0 +1,38 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.mousedragscrollable li {
+    background-size: cover;
+}
+
+.a {
+    background-image: url();
+}
+
+.b {
+    background: red;
+    background-image: url();
+}
+
+.c {
+    background: green;
+    background-image: url();
+}
+
+.mousedragscrollable .link a {
+    color: #fff;
+    background: blue;
+}
+
+.mousedragscrollable .link a:hover {
+    color: blue;
+    background: yellow;
+}
+
+body::-webkit-scrollbar-thumb,
+.mousedragscrollable::-webkit-scrollbar-thumb,
+.mousedragscrollable li::-webkit-scrollbar-thumb {
+    background: yellow;
+    border-radius: 0;
+}

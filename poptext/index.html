@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>#26DEC16MON</title>
+  <style>
+    a {
+      color: #000;
+    }
+
+    #act {
+      width: 65%;
+      float: left;
+      font-size: 10vw;
+      line-height: 111%;
+      letter-spacing: 0.1em;
+    }
+
+    #act ul {
+      font-family: "Gabriola";
+      margin: 0%;
+      padding: 0%;
+      list-style-type: none;
+    }
+
+    #act ul li {
+      position: relative;
+      float: left;
+      width: 100%;
+      margin: 0%;
+      padding: 2.5vw;
+      box-sizing: border-box;
+    }
+
+    #act ul li img {
+      position: absolute;
+      z-index: -1;
+      width: 33.333%;
+    }
+
+    .tcs {
+      top: 2.5vw;
+      right: 2.5vw;
+    }
+
+    .to {
+      top: 2.5vw;
+      left: 2.5vw;
+    }
+
+    #info {
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, TakaoPGothic;
+      letter-spacing: 0.1em;
+      font-size: 2vw;
+      width: 30%;
+      float: right;
+    }
+
+    #info h2 {
+      font-size: 150%;
+      font-weight: 500;
+    }
+
+    #info h2 b {
+      font-size: 150%;
+      font-weight: 500;
+      display: block;
+    }
+
+    @media screen and (max-width: 700px) {
+
+      #act {
+        width: 100%;
+        clear: both;
+        font-size: 15vw;
+        height: 100vw;
+      }
+
+      #act ul li {
+        padding: 4.5vw;
+      }
+
+      #info {
+        font-size: 2.5vw;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 2.5vw;
+        clear: both;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <section id="act">
+      <ul>
+        <li>
+          <a href="https://soundcloud.com/theodoreschafer" target="_blank"
+            onMouseover='poptext="水彩画のように淡く美しい音楽を、ピアノ・物音・持続音などを用いて制作するアメリカ・サンタフェ在住の音楽家。また2015年からカセットレーベルatriumをスタートし、自身の音楽にも通じる素晴らしい印象主義音楽作品をコンスタントに出版しています。";popvisible=1;'
+            onMouseOut="popvisible=0;">Theodore Cale Schafer
+          </a>
+          <img class="tcs" src="https://f4.bcbits.com/img/a3001345522_2.jpg" hspace="10">
+        </li>
+        <li>
+          <a href="https://soundcloud.com/takamitsuohta" target="_blank"
+            onMouseover='poptext="展示場所にまつわる自然現象に注目した制作を行う京都在住の美術家。その場所周辺で集めた物や音を用いた偶然の重なりのような作品を、展覧会・インスタレーション・パフォーマンスなど様々な方法で発表しています。";popvisible=1;'
+            onMouseOut="popvisible=0;">Takamitsu Ohta
+          </a>
+          <img class="to" src="https://i1.sndcdn.com/avatars-000005275417-cwf038-t500x500.jpg">
+        </li>
+      </ul>
+    </section>
+    <section id="info">
+      <h2>#26DEC16MON<br />12月26日(月) 20時開演予定</h2>
+      <p>Entrance on 1 order + donation<br />自由料金制 (要ドリンクオーダー)</p>
+      <h2>Venue 会場
+        <b>
+          <a href="https://www.facebook.com/chefdoeuvres/" target="_blank"
+            onMouseover='poptext="美術家小谷廣代が営む大阪・阿波座にあるカフェ・アートスペース。丁寧な料理、併設のアートスペースで行われる展覧会・コンサート、名前の通り「傑作」揃いの洗練された美しいお店です。（当日は、小谷廣代が最近ヨーロッパで制作したというリソグラフ作品を展示予定）";popvisible=1;'
+            onMouseOut="popvisible=0;">chef-d'œuvre</a>
+        </b> シェ・ドゥーヴル
+      </h2>
+      <p>
+        <u>Address 住所</u>
+        <br />1-9-12, Awaza, Nishi-ku, Osaka
+        <br />大阪府大阪市西区阿波座1丁目9−12
+      </p>
+      <p>
+        <a href="https://goo.gl/maps/joM3E339aEYQJhUt5" target="_blank">Google Map</a>
+      </p>
+    </section>
+  </main>
+</body>
+<script type="text/javascript">
+
+  var poptext = "";
+  var popvisible = 0;
+  document.write("<div id='PopupText' style='visibility:hidden;'></div>");
+  window.document.onmousemove = getMouseXY;
+
+  function getMouseXY(PopEvent) {
+    Popup = document.getElementById("PopupText");
+    if (popvisible == 1) {
+      if (undefined !== window.ActiveXObject) {//IE
+        var __base__scroll__;
+        if (document.compatMode == 'CSS1Compat') {//IEモード1
+          __base__scroll__ = document.documentElement;
+          x = __base__scroll__.scrollLeft + event.clientX;
+          y = __base__scroll__.scrollTop + event.clientY;
+        }
+        else {//IEモード2
+          x = document.body.scrollLeft + event.clientX;
+          y = document.body.scrollTop + event.clientY;
+        }
+      }
+      else {//IE以外
+        x = PopEvent.pageX + 0; //ズレる場合は数値を変えてください
+        y = PopEvent.pageY + 0;
+      }
+      Popup = document.getElementById("PopupText");
+      Popup.innerHTML = poptext;
+      Popup.style.position = "absolute";
+      Popup.style.zIndex = 100;
+      Popup.style.margin = 0 + "px";
+      //----- 自由に変更（吹き出しデザイン） -----
+      Popup.style.left = x + 10 + "px"; //マウスからの横座標（吹き出し位置）
+      Popup.style.top = y + 10 + "px"; //マウスからの縦座標（吹き出し位置）
+      Popup.style.maxWidth = 250 + "px"; //横幅の最大値
+      Popup.style.border = "solid #000 1px"; //枠色・太さ
+      Popup.style.padding = 0.5 + "rem"; //枠内の余白
+      Popup.style.color = "#000"; //文字色
+      Popup.style.fontSize = 0.75 + "rem"; //文字サイズ
+      Popup.style.backgroundColor = "#fff"; //背景色
+
+      Popup.style.visibility = "visible";
+    }
+    else { Popup.style.visibility = "hidden"; }
+  }
+</script>
+
+</html>

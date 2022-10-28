@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>rotate-scale-transform</title>
+    <style>
+        #title {
+            font-size: 5.5vw;
+            font-family: 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #info {
+            font-size: 2.5vh;
+        }
+
+        #links {
+            font-size: 2vw;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #main {
+            font-size: 1.25vw;
+            overflow: auto;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div id="cover"></div>
+
+    <h1 id="title">
+        <b>rotate-scale-transform</b>
+    </h1>
+
+    <section id="info">
+        <div>
+            <code>
+            $(function () {
+              $(window).scroll(function () {
+                var y = $(this).scrollTop();
+                $("#title b").css('transform', 'rotateY(' + y + 'deg)');
+        
+                var plus = y * 0.0005 + 1;
+                $("#links").css('transform', 'rotateX(' + y + 'deg) scale(' + plus + ')');
+                let minus = y * -0.0005 + 1;
+                $("#info").css('transform', 'rotateZ(' + y + 'deg) scale(' + minus + ')');
+              });
+            });
+        </code>
+        </div>
+    </section>
+
+    <section id="links">
+        <div>
+            <a href="rotate-scale-transform.zip">Download</a>
+            <hr />
+            Link :
+            <a href="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">jQuery</a><br />
+            <a href="https://developer.mozilla.org/ja/docs/Web/CSS/transform-function">transform-function</a>
+            <a href="https://developer.mozilla.org/ja/docs/Web/CSS/transform-function/rotate">rotate()</a>
+            <a href="https://developer.mozilla.org/ja/docs/Web/CSS/transform-function/scale">scale()</a>
+        </div>
+    </section>
+
+    <main id="main">
+        <div>
+            <pre><code><math><![CDATA[
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>rotate-scale-scroll</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div id="cover"></div>
+
+    <h1 id="title">
+        <b>rotate-scale-scroll</b>
+    </h1>
+
+    <section id="info">
+        <div></div>
+    </section>
+
+    <section id="links">
+        <div>
+            Link :
+            <a href="#">#</a>
+        </div>
+    </section>
+    <main id="main">
+        <div></div>
+    </main>
+    
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                var y = $(this).scrollTop();
+                $("#title b").css('transform', 'rotateY(' + y + 'deg)');
+
+                var plus = y * 0.0005 + 1;
+                $("#links").css('transform', 'rotateX(' + y + 'deg) scale(' + plus + ')');
+                let minus = y * -0.0005 + 1;
+                $("#info").css('transform', 'rotateZ(' + y + 'deg) scale(' + minus + ')');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+    ]]></math></code></pre>
+        </div>
+    </main>
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                var y = $(this).scrollTop();
+                $("#title b").css('transform', 'rotateY(' + y + 'deg)');
+
+                var plus = y * 0.0005 + 1;
+                $("#links").css('transform', 'rotateX(' + y + 'deg) scale(' + plus + ')');
+                let minus = y * -0.0005 + 1;
+                $("#info").css('transform', 'rotateZ(' + y + 'deg) scale(' + minus + ')');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+#index h1,
+#index #calendar,
+#index button[type="submit"] {
+    font-family: "MS Mincho", serif;
+}
+
+#index {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1rem 2.5%;
+    margin: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#index #calendar,
+#index button[type="submit"] {
+    color: #000;
+    font-size: 1rem;
+    letter-spacing: 0.04rem;
+    margin: 0;
+    display: block;
+    border: 1px solid;
+    background: #fff;
+}
+
+#index #calendar,
+#index button[type="submit"] {
+    display: block;
+}
+
+#index h1 {
+    margin: 0;
+    font-size: 125%;
+}
+
+#index h1,
+#index #calendar {
+    padding: 0.5rem;
+}
+
+#index button[type="submit"] {
+    background: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    padding: 0.25rem 0.75rem;
+}
+
+@media screen and (max-width: 550px) {
+    #index {
+        padding: 1rem 0.5rem;
+    }
+}
