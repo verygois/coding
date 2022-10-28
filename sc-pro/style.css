@@ -1,9 +1,5 @@
-html {
-    height: -webkit-fill-available;
-}
-
 body,
-.countdown p {
+.countdown .targetTime {
     padding: 0;
     margin: 0;
 }
@@ -20,8 +16,7 @@ body,
 }
 
 .countdown {
-    height: 100vh;
-    max-height: -webkit-fill-available;
+    min-height: 100vh;
 }
 
 .countdown,
@@ -49,6 +44,9 @@ body,
 }
 
 .countdown h1 {
+    z-index: -1;
+    user-select: none;
+    pointer-events: none;
     width: 100%;
     display: flex;
     justify-content: space-around;

@@ -17,8 +17,58 @@
 
 <body>
   <main>
-    <section class="countdown" data-target-time="2022/12/31 23:59:59">
+    <section class="countdown" data-target-time="2022/10/28 17:00:00">
       <p class="targetTime"></p>
+      <p>index.html</p>
+      <pre><code><math><![CDATA[
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <section class="countdown" data-target-time="0000/00/00 00:00:00">
+    <p class="targetTime"></p>
+    <h1>
+      <span class="day">0</span>
+      <span class="hour">0</span>
+      <span class="min">0</span>
+      <span class="sec">0</span>
+      <span class="msec">0</span>
+    </h1>
+  </section>
+  <script src="countdown.js"></script>
+</body>
+</html>
+        ]]></math></code></pre>
+        <hr/>
+        <p>countdown.js</p>
+        <pre><code><math><![CDATA[
+let countdown = setInterval(function () {
+  document.querySelectorAll('.countdown').forEach(function (CD) {
+      const now = new Date()
+      const targetTime = new Date(CD.getAttribute("data-target-time"))
+      const realTime = targetTime - now
+
+      CD.querySelectorAll('.targetTime')[0].textContent = targetTime;
+
+      if (realTime < 0) return true
+
+      const day = Math.floor(realTime / 1000 / 60 / 60 / 24)
+      const hour = Math.floor(realTime / 1000 / 60 / 60) % 24
+      const min = Math.floor(realTime / 1000 / 60) % 60
+      const sec = Math.floor(realTime / 1000) % 60
+      const msec = Math.floor(realTime / 10) % 60
+
+      CD.querySelectorAll('.day')[0].textContent = day;
+      CD.querySelectorAll('.hour')[0].textContent = hour;
+      CD.querySelectorAll('.min')[0].textContent = min;
+      CD.querySelectorAll('.sec')[0].textContent = sec;
+      CD.querySelectorAll('.msec')[0].textContent = msec;
+  });
+}, 0)
+          ]]></math></code></pre>
       <h1>
         <span class="day">0</span>
         <span class="hour">0</span>
@@ -48,6 +98,124 @@
         <span class="sec">0</span>
         <span class="msec">0</span>
       </h1>
+    </section>
+
+    <section class="countdown">
+      <p>style.css</p>
+      <pre><code><math><![CDATA[
+body,
+.countdown .targetTime {
+    padding: 0;
+    margin: 0;
+}
+
+.countdown .targetTime {
+    font-size: 90%;
+    font-weight: 500;
+    font-stretch: extra-expanded;
+}
+
+.countdown .targetTime,
+.countdown h1 span {
+    text-align: center;
+}
+
+.countdown {
+    min-height: 100vh;
+}
+
+.countdown,
+.countdown h1 span {
+    box-sizing: border-box;
+    padding: 1rem 2.5%;
+    position: relative;
+}
+
+.countdown .targetTime::after {
+    content: 'まで';
+    font-size: 75%;
+    font-weight: 100;
+    display: inline-block;
+    padding: 0 0.25rem;
+}
+
+.countdown h1,
+.countdown h1 span::before,
+.countdown h1 span::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.countdown h1 {
+    z-index: -1;
+    user-select: none;
+    pointer-events: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.countdown h1 span {
+    display: block;
+    width: 20%;
+    margin: 0;
+}
+
+.countdown h1 span::before {
+    font-size: 55%;
+    font-style: italic;
+    font-weight: 200;
+    margin-top: -2rem;
+}
+
+.countdown h1 .day::before {
+    content: 'day';
+}
+
+.countdown h1 .hour::before {
+    content: 'hour';
+}
+
+.countdown h1 .min::before {
+    content: 'min';
+}
+
+.countdown h1 .sec::before {
+    content: 'sec';
+}
+
+.countdown h1 .msec::before {
+    content: 'ms';
+}
+
+.countdown h1 span::after {
+    font-size: 45%;
+    font-weight: 300;
+    margin-top: 2rem;
+}
+
+.countdown h1 .day::after {
+    content: '日';
+}
+
+.countdown h1 .hour::after {
+    content: '時間';
+}
+
+.countdown h1 .min::after {
+    content: '分';
+}
+
+.countdown h1 .sec::after {
+    content: '秒';
+}
+
+.countdown h1 .msec::after {
+    content: 'ミリ秒';
+}
+        ]]></math></code></pre>
     </section>
   </main>
 
