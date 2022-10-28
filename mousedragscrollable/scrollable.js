@@ -1,6 +1,6 @@
-jQuery.prototype.mousedragscrollable = function () {
+function mousedragscrollable(element){
     let target; // 動かす対象
-    $(this).each(function (i, e) {
+    $(element).each(function (i, e) {
         $(e).mousedown(function (event) {
             event.preventDefault();
             target = $(e); // 動かす対象
@@ -40,4 +40,4 @@ jQuery.prototype.mousedragscrollable = function () {
     });
 }
 
-$(".mousedragscrollable").mousedragscrollable();
+mousedragscrollable(".mousedragscrollable");
